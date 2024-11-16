@@ -101,31 +101,31 @@ class CarController extends Controller
 
         $active_plan = SubscriptionHistory::where('user_id', $user->id)->latest()->first();
 
-        if(!$active_plan){
-            $notification=  trans('translate.User did not enrolled any plan yet.');
-            $notification=array('messege'=>$notification,'alert-type'=>'error');
-            return redirect()->route('admin.select-car-purpose')->with($notification);
-        }
+        // if(!$active_plan){
+        //     $notification=  trans('translate.User did not enrolled any plan yet.');
+        //     $notification=array('messege'=>$notification,'alert-type'=>'error');
+        //     return redirect()->route('admin.select-car-purpose')->with($notification);
+        // }
 
-        $expiration_date = $active_plan->expiration_date;
+        // $expiration_date = $active_plan->expiration_date;
 
-        if($expiration_date != 'lifetime'){
-            if(date('Y-m-d') > $expiration_date){
-                $notification = trans('translate.Your plan is expired, please renew or re-order');
-                $notification = array('messege'=>$notification,'alert-type'=>'error');
-                return redirect()->route('admin.select-car-purpose')->with($notification);
-            }
-        }
+        // if($expiration_date != 'lifetime'){
+        //     if(date('Y-m-d') > $expiration_date){
+        //         $notification = trans('translate.Your plan is expired, please renew or re-order');
+        //         $notification = array('messege'=>$notification,'alert-type'=>'error');
+        //         return redirect()->route('admin.select-car-purpose')->with($notification);
+        //     }
+        // }
 
-        $max_car = $active_plan->max_car;
+        // $max_car = $active_plan->max_car;
 
-        $total_car = Car::where('agent_id', $user->id)->count();
+        // $total_car = Car::where('agent_id', $user->id)->count();
 
-        if($total_car >= $max_car){
-            $notification = trans('translate.Your car limitation has exceeded');
-            $notification = array('messege'=>$notification,'alert-type'=>'error');
-            return redirect()->route('admin.select-car-purpose')->with($notification);
-        }
+        // if($total_car >= $max_car){
+        //     $notification = trans('translate.Your car limitation has exceeded');
+        //     $notification = array('messege'=>$notification,'alert-type'=>'error');
+        //     return redirect()->route('admin.select-car-purpose')->with($notification);
+        // }
 
         $car = new Car();
 
@@ -523,21 +523,21 @@ class CarController extends Controller
 
         $active_plan = SubscriptionHistory::where('user_id', $car->agent_id)->latest()->first();
 
-        if(!$active_plan){
-            $notification=  trans('translate.User did not enrolled any plan yet.');
-            $notification=array('messege'=>$notification,'alert-type'=>'error');
-            return redirect()->route('admin.select-car-purpose')->with($notification);
-        }
+        // if(!$active_plan){
+        //     $notification=  trans('translate.User did not enrolled any plan yet.');
+        //     $notification=array('messege'=>$notification,'alert-type'=>'error');
+        //     return redirect()->route('admin.select-car-purpose')->with($notification);
+        // }
 
-        $featured_car = $active_plan->featured_car;
+        // $featured_car = $active_plan->featured_car;
 
-        $total_car = Car::where('agent_id', $car->agent_id)->where('is_featured', 'enable')->count();
+        // $total_car = Car::where('agent_id', $car->agent_id)->where('is_featured', 'enable')->count();
 
-        if($total_car >= $featured_car){
-            $notification = trans('translate.Your car limitation has exceeded');
-            $notification = array('messege'=>$notification,'alert-type'=>'error');
-            return redirect()->route('admin.select-car-purpose')->with($notification);
-        }
+        // if($total_car >= $featured_car){
+        //     $notification = trans('translate.Your car limitation has exceeded');
+        //     $notification = array('messege'=>$notification,'alert-type'=>'error');
+        //     return redirect()->route('admin.select-car-purpose')->with($notification);
+        // }
 
         $car->is_featured = 'enable';
         $car->save();
