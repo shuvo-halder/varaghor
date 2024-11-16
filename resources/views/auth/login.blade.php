@@ -39,7 +39,7 @@
                     <div class="login-head">
                         <h3>{{ __('translate.Sign In') }}</h3>
 
-                        <span>{{ __('translate.Welcome to CARBAZ') }}</span>
+                        <span>{{ __('translate.Welcome to VARAGHOR') }}</span>
                     </div>
 
 

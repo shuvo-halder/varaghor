@@ -975,6 +975,7 @@
   'Gender Required' => 'Gender Required',
   'Image required' => 'Image required',
   'Are you share this room? ' => 'Are you share this room?',
+  'Welcome to VARAGHOR' => 'Welcome to VARAGHOR',
 
 
 );

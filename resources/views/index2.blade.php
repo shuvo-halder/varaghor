@@ -560,9 +560,9 @@
                                         @endif
 
                                         @if ($car->condition == 'New')
-                                        <p class="text text-two ">{{ __('translate.family') }}</p>
+                                        <p class="text text-two ">{{ __('translate.New') }}</p>
                                         @else
-                                        <p class="text text-two ">{{ __('translate.bachelor') }}</p>
+                                        <p class="text text-two ">{{ __('translate.Used') }}</p>
                                         @endif
                                     </div>
 
@@ -767,9 +767,9 @@
                                                     @endif
 
                                                     @if ($car->condition == 'New')
-                                                    <p class="text text-two ">{{ __('translate.family') }}</p>
+                                                    <p class="text text-two ">{{ __('translate.New') }}</p>
                                                     @else
-                                                    <p class="text text-two ">{{ __('translate.bachelor') }}</p>
+                                                    <p class="text text-two ">{{ __('translate.Used') }}</p>
                                                     @endif
                                                 </div>
 
@@ -930,9 +930,9 @@
                                                     @endif
 
                                                     @if ($car->condition == 'New')
-                                                    <p class="text text-two ">{{ __('translate.family') }}</p>
+                                                    <p class="text text-two ">{{ __('translate.New') }}</p>
                                                     @else
-                                                    <p class="text text-two ">{{ __('translate.bachelor') }}</p>
+                                                    <p class="text text-two ">{{ __('translate.Used') }}</p>
                                                     @endif
                                                 </div>
 
