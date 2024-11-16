@@ -111,7 +111,7 @@ class CarRequest extends FormRequest
             'offer_price.numeric' => trans('translate.Offer price should be numeric'),
             'address.required' => trans('translate.Address is required'),
             'google_map.required' => trans('translate.Google map is required'),
-            'body_type.required' => trans('translate.Property Condition is required'),
+            'body_type.required' => trans('translate.Are you share this room?'),
             'engine_size.required' => trans('translate.property square feet'),
             'drive.required' => trans('translate.Available date is empty'),
             'interior_color.required' => trans('translate.Tnterior color is required'),

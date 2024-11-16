@@ -948,6 +948,10 @@
   'Balcony' => 'Balcony',
   'Floor Number' => 'Floor Number',
   'Gender' => 'Gender',
+  'Share' => 'Share',
+  'No' => 'No',
+  'Yes' => 'Yes',
+
 
   // adding listing validation
   'User id Required' => 'User Id Require!',
@@ -962,6 +966,8 @@
   'Floor number is empty' => 'Floor Number is empty',
   'Gender Required' => 'Gender Required',
   'Image required' => 'Image required',
+  'Are you share this room? ' => 'Are you share this room?',
+  
 
 );
  ?>

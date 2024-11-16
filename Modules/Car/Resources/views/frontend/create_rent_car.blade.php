@@ -196,13 +196,11 @@
                                             </div>
 
                                             <div class="description-item-inner">
-                                                <label for="body_type" class="form-label">{{ __('translate.Property Condition') }}
+                                                <label for="condition" class="form-label">{{ __('translate.Property Condition') }}
                                                     <span>*</span> </label>
-                                                    <select class="form-control" name="body_type" id="body_type">
-                                                        <option {{ 'Used' == old('body_type') ? 'selected' : '' }} value="Used">{{ __('translate.Used') }}</option>
-                                                        <option {{ 'New' == old('body_type') ? 'selected' : '' }} value="New">{{ __('translate.New') }}</option>
-                                                        
-                                                        
+                                                    <select class="form-select"  name="condition">
+                                                        <option {{ 'Used' == old('condition') ? 'selected' : '' }} value="Used">{{ __('translate.Used') }}</option>
+                                                        <option {{ 'New' == old('condition') ? 'selected' : '' }} value="New">{{ __('translate.New') }}</option>
                                                     </select>
                                             
                                             </div>
@@ -303,6 +301,15 @@
                                                         @for ($i = 1; $i < 20; $i++)
                                                             <option value={{ $i }}>{{ $i }}</option>
                                                         @endfor
+                                                    </select>
+                                                    
+                                            </div>
+                                            <div class="description-item-inner">
+                                                <label for="body_type" class="form-label">{{ __('translate.Share') }}?
+                                                    <span>*</span> </label>
+                                                    <select class="form-select"  name="body_type">
+                                                        <option {{ 'No' == old('body_type') ? 'selected' : '' }} value="No">{{ __('translate.No') }}</option>
+                                                        <option {{ 'Yes' == old('body_type') ? 'selected' : '' }} value="Yes">{{ __('translate.Yes') }}</option>
                                                     </select>
                                                     
                                             </div>
