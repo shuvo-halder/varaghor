@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title')
-    <title>{{ __('translate.Create Rent Car') }}</title>
+    <title>{{ __('translate.Create Rent Property') }} || VaraGhor</title>
 @endsection
 @section('body-content')
 
@@ -13,11 +13,11 @@
                 <div class="col-lg-12">
 
                     <div class="inner-banner-df">
-                    <h1 class="inner-banner-taitel">{{ __('translate.Create Rent Car') }}</h1>
+                    <h1 class="inner-banner-taitel">{{ __('translate.Create Rent Property') }}</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('translate.Home') }}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ __('translate.Create Rent Car') }}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ __('translate.Create Rent Property') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -98,10 +98,10 @@
 
 
                                             <div class="description-item-inner">
-                                                <label for="brand" class="form-label">{{ __('translate.Brand') }}
+                                                <label for="brand" class="form-label">{{ __('translate.Property') }}
                                                     <span>*</span> </label>
                                                 <select class="form-select select2" name="brand_id">
-                                                    <option value="">{{ __('translate.Select Brand') }}</option>
+                                                    <option value="">{{ __('translate.Property Type') }}</option>
                                                     @foreach ($brands as $brand)
                                                         <option  {{ $brand->id == old('brand_id') ? 'selected' : '' }} value="{{ $brand->id }}">{{ $brand->translate->name }}</option>
                                                     @endforeach
@@ -137,8 +137,8 @@
                                                 <label for=" name="rent_period"" class="form-label">{{ __('translate.Rent Period') }}
                                                     <span>*</span> </label>
                                                 <select class="form-select"  name="rent_period">
-                                                    <option {{ 'Hourly' == old('rent_period') ? 'selected' : '' }} value="Hourly">{{ __('translate.Hourly') }}</option>
-                                                    <option {{ 'Daily' == old('rent_period') ? 'selected' : '' }} value="Daily">{{ __('translate.Daily') }}</option>
+                                                    {{-- <option {{ 'Hourly' == old('rent_period') ? 'selected' : '' }} value="Hourly">{{ __('translate.Hourly') }}</option> --}}
+                                                    {{-- <option {{ 'Daily' == old('rent_period') ? 'selected' : '' }} value="Daily">{{ __('translate.Daily') }}</option> --}}
                                                     <option {{ 'Monthly' == old('rent_period') ? 'selected' : '' }} value="Monthly">{{ __('translate.Monthly') }}</option>
                                                     <option {{ 'Yearly' == old('rent_period') ? 'selected' : '' }} value="Yearly">{{ __('translate.Yearly') }}</option>
                                                 </select>

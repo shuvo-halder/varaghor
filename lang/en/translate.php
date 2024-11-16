@@ -920,5 +920,8 @@
   'Add Home for Sale' => 'Add Property for Sale',
   'sale rent front desc' => 'Do you have any house or flat to rent? Click the button below to add new rental house information and get a new rental.',
   'Listing' => 'Listing',
+  'Create Sale Property' => 'Create Sale Property',
+  'Create Rent Property' => 'Create Rent Property',
+  'Property Type' => 'Property Type',
 );
  ?>
