@@ -158,7 +158,7 @@
                                     <thead>
                                         <tr>
                                             <th>{{ __('translate.Title') }}</th>
-                                            <th>{{ __('translate.Area') }}</th>
+                                            <th>{{ __('translate.Property') }}</th>
                                             <th>{{ __('translate.Price') }}</th>
                                             <th>{{ __('translate.Featured') }}</th>
                                             <th>{{ __('translate.Status') }}</th>

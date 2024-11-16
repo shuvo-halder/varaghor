@@ -33,7 +33,7 @@
                                     <button class="nav-link active" id="pills-home-tab1" data-bs-toggle="pill"
                                         data-bs-target="#pills-home1" type="button" role="tab"
                                         aria-controls="pills-home1"
-                                        aria-selected="true">{{ __('translate.allhomes') }}</button>
+                                        aria-selected="true">{{ __('translate.All Property') }}</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="pills-profile-tab1" data-bs-toggle="pill"
@@ -88,7 +88,7 @@
                                                 <select class="form-select form-select-lg"
                                                     aria-label=".form-select-lg example" name="brands[]">
                                                     <option selected value="">
-                                                        {{ __('translate.selectLocation') }}
+                                                        {{ __('translate.Select Property') }}
                                                     </option>
                                                     @foreach ($brands as $brand)
                                                     <option value="{{ $brand->id }}">{{ $brand->name }}</option>
@@ -201,7 +201,7 @@
                                                 <select class="form-select form-select-lg"
                                                     aria-label=".form-select-lg example" name="brands[]">
                                                     <option selected value="">
-                                                        {{ __('translate.Select Brand') }}
+                                                        {{ __('translate.Select Property') }}
                                                     </option>
                                                     @foreach ($brands as $brand)
                                                     <option value="{{ $brand->id }}">{{ $brand->name }}</option>
@@ -312,7 +312,7 @@
                                                 <select class="form-select form-select-lg"
                                                     aria-label=".form-select-lg example" name="brands[]">
                                                     <option selected value="">
-                                                        {{ __('translate.Select Brand') }}
+                                                        {{ __('translate.Select Property') }}
                                                     </option>
                                                     @foreach ($brands as $brand)
                                                     <option value="{{ $brand->id }}">{{ $brand->name }}</option>
@@ -415,16 +415,16 @@
                                         </svg>
                                     </span>
                                 </div>
-                                <span>{{ __('translate.Area') }}</span>
+                                <span>{{ __('translate.Property') }}</span>
                             </div>
 
-                            <h2>{{ __('translate.Explore Popular Area') }}</h2>
+                            <h2>{{ __('translate.Explore Popular Property') }}</h2>
                         </div>
 
                         <div class="  col-xl-2 col-lg-3">
                             <div class="categories-three-view-btn">
 
-                                <a href="{{ route('listings') }}" class="thm-btn-thr">{{ __('translate.View All') }}</a>
+                                <a href="{{ route('listings') }}" class="thm-btn-thr">{{ __('translate.View') }}</a>
                             </div>
                         </div>
 

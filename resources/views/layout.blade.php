@@ -781,7 +781,7 @@
                                                     <path
                                                         d="M8.62856 9L12.2952 5M12.2952 5L8.62856 0.999999M12.2952 5L1.29523 5"
                                                         stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg></span> {{ __('translate.Manage Car') }}
+                                                </svg></span> {{ __('translate.Listing') }}
                                             </a>
                                         </li>
                                     <li>

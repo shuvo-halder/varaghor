@@ -32,7 +32,7 @@
                 @include('profile.sidebar')
 
                 <div class="col-lg-9">
-                    <form action="{{ route('user.car.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('user.homes.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <input type="hidden" name="purpose" value="{{ request()->get('purpose') }}">
