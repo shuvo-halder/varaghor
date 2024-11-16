@@ -956,6 +956,9 @@
   'Property Details' => 'Property Details',
   'Edit Property' => 'Edit Property',
   'Edit Sale Property' => 'Edit Sale Property',
+  'Total' => 'Total',
+  'Related Listing' => 'Related Listing',
+  'Related Property Listing' => 'Related Property Listing',
 
 
   // adding listing validation
