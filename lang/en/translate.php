@@ -907,7 +907,7 @@
   'Explore Popular Property' => 'Explore Popular Property',
   'View' => 'View',
   'Featured Homes' => 'Featured Property',
-  'Featured Homes Listings' => 'Featured Homes Listings',
+  'Featured Homes Listings' => 'Featured House Listings',
   'Available Homes' => 'Available Property',
   'Latest Homes Listings' => 'Latest Property Listings',
   'View More List' => 'View More List',
