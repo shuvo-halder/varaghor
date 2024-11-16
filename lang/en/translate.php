@@ -221,6 +221,7 @@
   'Dealers name/username' => 'Dealers name/username',
   'Select City' => 'Select City',
   'Search Now' => 'Search Now',
+  'Search Property' => 'Search Property',
   'Total Cars' => 'Total Cars',
   'Profile Details' => 'Profile Details',
   'Dealer Not Found!' => 'Dealer Not Found!',
@@ -908,6 +909,7 @@
   'View' => 'View',
   'Featured Homes' => 'Featured Property',
   'Featured Homes Listings' => 'Featured House Listings',
+  'House Listing' => 'House Listing',
   'Available Homes' => 'Available Property',
   'Latest Homes Listings' => 'Latest Property Listings',
   'View More List' => 'View More List',
@@ -967,7 +969,7 @@
   'Gender Required' => 'Gender Required',
   'Image required' => 'Image required',
   'Are you share this room? ' => 'Are you share this room?',
-  
+
 
 );
  ?>
