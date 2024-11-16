@@ -206,7 +206,7 @@ class CarController extends Controller
 
         $notification= trans('translate.Created Successfully');
         $notification=array('messege'=>$notification,'alert-type'=>'success');
-        return redirect()->route('user.car.edit', ['car' => $car->id, 'lang_code' => admin_lang()] )->with($notification);
+        return redirect()->route('user.homes.edit', ['home' => $car->id, 'lang_code' => admin_lang()] )->with($notification);
     }
 
     /**

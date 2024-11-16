@@ -134,17 +134,13 @@
                                             </div>
 
                                             <div class="description-item-inner">
-                                                <label for=" name="rent_period"" class="form-label">{{ __('translate.Rent Period') }}
+                                                <label for="rent_period" class="form-label">{{ __('translate.Rent Period') }}
                                                     <span>*</span> </label>
                                                 <select class="form-select"  name="rent_period">
-                                                    {{-- <option {{ 'Hourly' == old('rent_period') ? 'selected' : '' }} value="Hourly">{{ __('translate.Hourly') }}</option> --}}
-                                                    {{-- <option {{ 'Daily' == old('rent_period') ? 'selected' : '' }} value="Daily">{{ __('translate.Daily') }}</option> --}}
                                                     <option {{ 'Monthly' == old('rent_period') ? 'selected' : '' }} value="Monthly">{{ __('translate.Monthly') }}</option>
                                                     <option {{ 'Yearly' == old('rent_period') ? 'selected' : '' }} value="Yearly">{{ __('translate.Yearly') }}</option>
                                                 </select>
                                             </div>
-
-
                                         </div>
                                         <div class="description-item two">
 
@@ -191,33 +187,50 @@
 
                                             <div class="description-item-inner">
                                                 <label for="exampleFormControlInput1" class="form-label">
-                                                    {{ __('translate.Seller Type') }}
+                                                    {{ __('translate.Owner Type') }}
                                                     <span>*</span> </label>
                                                 <select class="form-select"  name="seller_type">
-                                                    <option {{ 'Dealer' == old('seller_type') ? 'selected' : '' }}  value="Dealer">{{ __('translate.Dealer') }}</option>
                                                     <option {{ 'Personal' == old('seller_type') ? 'selected' : '' }} value="Personal">{{ __('translate.Indivisual') }}</option>
+                                                    <option {{ 'Joint Owner' == old('seller_type') ? 'selected' : '' }}  value="Joint Owner">{{ __('translate.Joint Owner') }}</option>
                                                 </select>
                                             </div>
 
                                             <div class="description-item-inner">
-                                                <label for="body_type" class="form-label">{{ __('translate.Body Type') }}
+                                                <label for="body_type" class="form-label">{{ __('translate.Property Condition') }}
                                                     <span>*</span> </label>
-                                                <input type="text" class="form-control" id="body_type"
-                                                    placeholder="{{ __('translate.Body Type') }}" name="body_type" value="{{ old('body_type') }}">
+                                                    <select class="form-control" name="body_type" id="body_type">
+                                                        <option {{ 'Used' == old('body_type') ? 'selected' : '' }} value="Used">{{ __('translate.Used') }}</option>
+                                                        <option {{ 'New' == old('body_type') ? 'selected' : '' }} value="New">{{ __('translate.New') }}</option>
+                                                        
+                                                        
+                                                    </select>
+                                            
                                             </div>
 
                                             <div class="description-item-inner">
-                                                <label for="engine_size" class="form-label">{{ __('translate.Engine Size') }}
+                                                <label for="engine_size" class="form-label">{{ __('translate.Square Feet') }}
                                                     <span>*</span> </label>
                                                 <input type="text" class="form-control"
-                                                    placeholder="{{ __('translate.Engine Size') }}" name="engine_size" id="engine_size" value="{{ old('engine_size') }}">
+                                                    placeholder="{{ __('translate.Square Feet') }}" name="engine_size" id="engine_size" value="{{ old('engine_size') }}">
                                             </div>
 
                                             <div class="description-item-inner">
-                                                <label for="drive" class="form-label">{{ __('translate.Drive') }}
-                                                    <span>*</span> </label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="{{ __('translate.Drive') }}" name="drive" id="drive" value="{{ old('drive') }}">
+                                                <label for="drive" class="form-label">{{ __('translate.available from') }}<span>*</span> </label>
+                                                <select name="drive" class="form-control" id="drive">
+                                                    <option {{ 'January' == old('drive') ? 'selected' : '' }} value="January">{{ __('translate.January') }}</option>
+                                                    <option {{ 'February' == old('drive') ? 'selected' : '' }} value="February">{{ __('translate.February') }}</option>
+                                                    <option {{ 'March' == old('drive') ? 'selected' : '' }} value="March">{{ __('translate.March') }}</option>
+                                                    <option {{ 'April' == old('drive') ? 'selected' : '' }} value="April">{{ __('translate.April') }}</option>
+                                                    <option {{ 'May' == old('drive') ? 'selected' : '' }} value="May">{{ __('translate.May') }}</option>
+                                                    <option {{ 'June' == old('drive') ? 'selected' : '' }} value="June">{{ __('translate.June') }}</option>
+                                                    <option {{ 'July' == old('drive') ? 'selected' : '' }} value="July">{{ __('translate.July') }}</option>
+                                                    <option {{ 'August' == old('drive') ? 'selected' : '' }} value="August">{{ __('translate.August') }}</option>
+                                                    <option {{ 'September' == old('drive') ? 'selected' : '' }} value="September">{{ __('translate.September') }}</option>
+                                                    <option {{ 'October' == old('drive') ? 'selected' : '' }} value="October">{{ __('translate.October') }}</option>
+                                                    <option {{ 'November' == old('drive') ? 'selected' : '' }} value="November">{{ __('translate.November') }}</option>
+                                                    <option {{ 'December' == old('drive') ? 'selected' : '' }} value="December">{{ __('translate.December') }}</option>
+                                                </select>
+                                                
                                             </div>
 
 
@@ -234,22 +247,38 @@
 
 
                                             <div class="description-item-inner">
-                                                <label for="exterior_color" class="form-label">{{ __('translate.Exterior Color') }}
+                                                <label for="exterior_color" class="form-label">{{ __('translate.Bedroom') }}
                                                     <span>*</span> </label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="{{ __('translate.Exterior Color') }}" name="exterior_color" id="exterior_color" value="{{ old('exterior_color') }}">
+                                                <select name="exterior_color" class="form-control" id="exterior_color">
+                                                    
+                                                    @for ($i = 1; $i < 9; $i++)
+                                                        <option value={{ $i }}>{{ $i }}</option>
+                                                    @endfor
+                                                    
+                                                </select>
+                                                
                                             </div>
 
                                             <div class="description-item-inner">
-                                                <label for="year" class="form-label">{{ __('translate.Year') }}
+                                                <label for="year" class="form-label">{{ __('translate.Bathroom') }}
                                                     <span>*</span> </label>
-                                                    <input class="form-control" type="text" name="year" id="year" value="{{ old('year') }}" placeholder="{{ __('translate.Year') }}">
+                                                    
+                                                    <select class="form-control" name="year" id="year">
+                                                        @for ($i = 1; $i < 9; $i++)
+                                                            <option value={{ $i }}>{{ $i }}</option>
+                                                        @endfor
+                                                    </select>
                                             </div>
 
                                             <div class="description-item-inner">
-                                                <label for="mileage" class="form-label">{{ __('translate.Mileage') }}
+                                                <label for="mileage" class="form-label">{{ __('translate.Kitchen') }}
                                                     <span>*</span> </label>
-                                                    <input class="form-control" type="text" name="mileage" id="mileage" value="{{ old('mileage') }}" placeholder="{{ __('translate.Mileage') }}">
+                                                    <select class="form-control" name="mileage" id="mileage">
+                                                        @for ($i = 1; $i < 5; $i++)
+                                                            <option value={{ $i }}>{{ $i }}</option>
+                                                        @endfor
+                                                    </select>
+                                                    
                                             </div>
 
                                         </div>
@@ -257,24 +286,36 @@
                                         <div class="description-item two">
 
                                             <div class="description-item-inner">
-                                                <label for="number_of_owner" class="form-label">{{ __('translate.Number of Owner') }}
+                                                <label for="number_of_owner" class="form-label">{{ __('translate.Balcony') }}
                                                     <span>*</span> </label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="{{ __('translate.Number of Owner') }}" name="number_of_owner" id="number_of_owner" value="{{ old('number_of_owner') }}">
+                                                    <select class="form-control" name="number_of_owner" id="number_of_owner">
+                                                        @for ($i = 1; $i < 5; $i++)
+                                                            <option value={{ $i }}>{{ $i }}</option>
+                                                        @endfor
+                                                    </select>
+                                                
                                             </div>
 
                                             <div class="description-item-inner">
-                                                <label for="fuel_type" class="form-label">{{ __('translate.Fuel Type') }}
+                                                <label for="fuel_type" class="form-label">{{ __('translate.Floor Number') }}
                                                     <span>*</span> </label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="{{ __('translate.Fuel Type') }}" name="fuel_type" id="fuel_type" value="{{ old('fuel_type') }}">
+                                                    <select class="form-control" name="fuel_type" id="fuel_type">
+                                                        @for ($i = 1; $i < 20; $i++)
+                                                            <option value={{ $i }}>{{ $i }}</option>
+                                                        @endfor
+                                                    </select>
+                                                    
                                             </div>
 
                                             <div class="description-item-inner">
-                                                <label for="transmission" class="form-label">{{ __('translate.Transmission') }}
+                                                <label for="transmission" class="form-label">{{ __('translate.Gender') }}
                                                     <span>*</span> </label>
-                                                <input type="text" class="form-control"
-                                                    placeholder="{{ __('translate.Transmission') }}" name="transmission" id="transmission" value="{{ old('transmission') }}">
+                                                    <select class="form-control" name="transmission" id="transmission">
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Family">Family</option>
+                                                    </select>
+                                                
                                             </div>
 
                                         </div>
