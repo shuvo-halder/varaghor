@@ -262,7 +262,7 @@
                                                     <span>*</span> </label>
                                                     
                                                     <select class="form-control" name="year" id="year">
-                                                        @for ($i = 1; $i < 9; $i++)
+                                                        @for ($i = 1; $i < 5; $i++)
                                                             <option value={{ $i }}>{{ $i }}</option>
                                                         @endfor
                                                     </select>
@@ -318,9 +318,9 @@
                                                 <label for="transmission" class="form-label">{{ __('translate.Gender') }}
                                                     <span>*</span> </label>
                                                     <select class="form-control" name="transmission" id="transmission">
-                                                        <option value="Male">Male</option>
-                                                        <option value="Female">Female</option>
-                                                        <option value="Family">Family</option>
+                                                        <option {{ 'Male' == old('transmission') ? 'selected' : '' }} value="Male">Male</option>
+                                                        <option {{ 'Female' == old('transmission') ? 'selected' : '' }} value="Female">Female</option>
+                                                        <option {{ 'Family' == old('transmission') ? 'selected' : '' }} value="Family">Family</option>
                                                     </select>
                                                 
                                             </div>

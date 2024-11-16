@@ -15,11 +15,11 @@
         <div class="container">
         <div class="col-lg-12">
             <div class="inner-banner-df">
-                <h1 class="inner-banner-taitel">{{ __('translate.Car Details') }}</h1>
+                <h1 class="inner-banner-taitel">{{ __('translate.Property Details') }}</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('translate.Home') }}</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{ __('translate.Car Details') }}</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ __('translate.Property Details') }}</li>
                     </ol>
                 </nav>
             </div>
@@ -129,8 +129,7 @@
 
 
                     <!-- Description Overview  -->
-                    <div class="accordion" id="accordionPanelsStayOpenExample" data-aos="fade-up"
-                    data-aos-delay="100">
+                    <div class="accordion" id="accordionPanelsStayOpenExample" data-aos="fade-up" data-aos-delay="100">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"

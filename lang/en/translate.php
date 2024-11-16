@@ -953,6 +953,9 @@
   'Share' => 'Share',
   'No' => 'No',
   'Yes' => 'Yes',
+  'Property Details' => 'Property Details',
+  'Edit Property' => 'Edit Property',
+  'Edit Sale Property' => 'Edit Sale Property',
 
 
   // adding listing validation
