@@ -32,7 +32,7 @@
                 @include('profile.sidebar')
 
                 <div class="col-lg-9">
-                    <form action="{{ route('user.car.update', $car->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('user.homes.update', $car->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -50,7 +50,7 @@
                                     <div class="car-images-inner">
                                         <div class="edit-car-item">
                                             @foreach ($language_list as $language)
-                                            <a href="{{ route('user.car.edit', ['car' => $car->id, 'lang_code' => $language->lang_code] ) }}" class="edit-car-btn">
+                                            <a href="{{ route('user.homes.edit', ['home' => $car->id, 'lang_code' => $language->lang_code] ) }}" class="edit-car-btn">
                                                 <span>
                                                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 
