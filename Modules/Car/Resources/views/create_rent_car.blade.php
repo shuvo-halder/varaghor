@@ -1,16 +1,16 @@
 @extends('admin.master_layout')
 @section('title')
-    <title>{{ __('translate.Car for Rent') }}</title>
+    <title>{{ __('Property for rent') }}</title>
 @endsection
 
 @section('body-header')
-    <h3 class="crancy-header__title m-0">{{ __('translate.Car for Rent') }}</h3>
-    <p class="crancy-header__text">{{ __('translate.Manage Car') }} >> {{ __('translate.Car for Rent') }}</p>
+    <h3 class="crancy-header__title m-0">{{ __('Property for rent') }}</h3>
+    <p class="crancy-header__text">{{ __('Manage Property') }} >> {{ __('Property for rent') }}</p>
 @endsection
 
 @section('body-content')
 
-    <form action="{{ route('admin.car.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.property.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
     <!-- crancy Dashboard -->

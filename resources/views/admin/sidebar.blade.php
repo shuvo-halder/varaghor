@@ -417,6 +417,11 @@
     <!-- End Nav Menu -->
 
     <!-- Support Card -->
-    <p class=" crancy-ybcolor mg-top-20">{{ __('translate.Version') }} : {{ $setting->app_version }}</p>
+    <p class=" crancy-ybcolor mg-top-20">
+        {{-- {{ __('translate.Version') }} : {{ $setting->app_version }} --}}
+        {{ __('Developer : ') }}<a href="https://github.com/shuvo-halder" target="__blank">Shuvo</a>
+        
+    </p>
+    
     <!-- End Support Card -->
 </div>
