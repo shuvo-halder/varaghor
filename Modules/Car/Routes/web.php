@@ -9,7 +9,7 @@ Route::group(['middleware' => ['XSS','DEMO']], function () {
     Route::group(['as'=> 'admin.', 'prefix' => 'admin/listing', 'middleware' => ['auth:admin']],function (){
 
         Route::resource('car', CarController::class);
-        Route::get('awaiting-car', [CarController::class, 'awaiting_car'])->name('awaiting-car');
+        Route::get('awaiting-property', [CarController::class, 'awaiting_car'])->name('awaiting-car');
         Route::get('featured-car', [CarController::class, 'featured_car'])->name('featured-car');
         Route::get('select-car-purpose', [CarController::class, 'select_car_purpose'])->name('select-car-purpose');
         Route::get('car-gallery/{id}', [CarController::class, 'car_gallery'])->name('car-gallery');
