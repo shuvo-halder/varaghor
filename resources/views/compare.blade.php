@@ -96,7 +96,7 @@
                                         <table class="table table-bordered ">
 
                                             <tr>
-                                                <td>{{ __('translate.Brand') }}</td>
+                                                <td>{{ __('translate.Property Type') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ $car?->brand?->name }}
@@ -151,7 +151,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.Body Type') }}</td>
+                                                <td>{{ __('Shareable ?') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->body_type) }}
@@ -160,7 +160,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.Engine Size') }}</td>
+                                                <td>{{ __('translate.Square Feet') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->engine_size) }}
@@ -169,7 +169,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.Drive') }}</td>
+                                                <td>{{ __('translate.available from') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->drive) }}
@@ -188,7 +188,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.Exterior Color') }}</td>
+                                                <td>{{ __('translate.Bedroom') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->exterior_color) }}
@@ -197,7 +197,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.Year') }}</td>
+                                                <td>{{ __('translate.Bathroom') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->year) }}
@@ -206,7 +206,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.Mileage') }}</td>
+                                                <td>{{ __('translate.Kitchen') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->mileage) }}
@@ -215,7 +215,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.No. of Owners') }}</td>
+                                                <td>{{ __('translate.Balcony') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->number_of_owner) }}
@@ -224,7 +224,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.Fuel Type') }}</td>
+                                                <td>{{ __('translate.Floor Number') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->fuel_type) }}
@@ -233,7 +233,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.Transmission') }}</td>
+                                                <td>{{ __('translate.Gender') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->transmission) }}
@@ -242,7 +242,7 @@
                                             </tr>
 
                                             <tr>
-                                                <td>{{ __('translate.Seller Type') }}</td>
+                                                <td>{{ __('translate.Owner Type') }}</td>
                                                 @foreach ($cars as $car)
                                                     <td>
                                                         {{ html_decode($car->seller_type) }}
