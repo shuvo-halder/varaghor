@@ -959,6 +959,7 @@
   'Total' => 'Total',
   'Related Listing' => 'Related Listing',
   'Related Property Listing' => 'Related Property Listing',
+  'Property Gallery' => 'Property Gallery',
 
 
   // adding listing validation

@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title')
-    <title>{{ __('translate.Car List') }}</title>
+    <title>{{ __('translate.Property Gallery') }}</title>
 @endsection
 @section('body-content')
 
@@ -12,11 +12,11 @@
         <div class="container">
         <div class="col-lg-12">
             <div class="inner-banner-df">
-                <h1 class="inner-banner-taitel">{{ __('translate.Car List') }}</h1>
+                <h1 class="inner-banner-taitel">{{ __('translate.Property Gallery') }}</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('translate.Home') }}</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{ __('translate.Car List') }}</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ __('translate.Property Gallery') }}</li>
                     </ol>
                 </nav>
             </div>

@@ -24,7 +24,7 @@
                                     <div class="crancy-ecom-card crancy-ecom-card__v2">
                                         <div class="crancy-ecom-card__heading">
                                             <div class="crancy-ecom-card__icon">
-                                                <h4 class="crancy-ecom-card__title">{{ __('translate.Awaiting Car') }} </h4>
+                                                <h4 class="crancy-ecom-card__title">{{ __('Awaiting Listing') }} </h4>
                                             </div>
 
                                         </div>
@@ -47,7 +47,7 @@
                                     <div class="crancy-ecom-card crancy-ecom-card__v2">
                                         <div class="crancy-ecom-card__heading">
                                             <div class="crancy-ecom-card__icon">
-                                                <h4 class="crancy-ecom-card__title">{{ __('translate.Featured Car') }} </h4>
+                                                <h4 class="crancy-ecom-card__title">{{ __('Feature Listing') }} </h4>
                                             </div>
 
                                         </div>
@@ -70,7 +70,7 @@
                                     <div class="crancy-ecom-card crancy-ecom-card__v2">
                                         <div class="crancy-ecom-card__heading">
                                             <div class="crancy-ecom-card__icon">
-                                                <h4 class="crancy-ecom-card__title">{{ __('translate.Total Car') }} </h4>
+                                                <h4 class="crancy-ecom-card__title">{{ __('Total Listing') }} </h4>
                                             </div>
 
                                         </div>
@@ -142,7 +142,7 @@
                                 <div class="crancy-customer-filter">
                                     <div class="crancy-customer-filter__single crancy-customer-filter__single--csearch d-flex items-center justify-between create_new_btn_box">
                                         <div class="crancy-header__form crancy-header__form--customer create_new_btn_inline_box">
-                                            <h4 class="crancy-product-card__title">{{ __('translate.Recent Cars') }}</h4>
+                                            <h4 class="crancy-product-card__title">{{ __('Recents Listing') }}</h4>
 
                                             <a href="{{ route('admin.select-car-purpose') }}" class="crancy-btn "><span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -171,7 +171,7 @@
                                                 </th>
 
                                                 <th class="crancy-table__column-2 crancy-table__h2 sorting" >
-                                                    {{ __('translate.Brand') }}
+                                                    {{ __('Type') }}
                                                 </th>
 
                                                 <th class="crancy-table__column-2 crancy-table__h2 sorting" >
@@ -179,7 +179,7 @@
                                                 </th>
 
                                                 <th class="crancy-table__column-2 crancy-table__h2 sorting" >
-                                                    {{ __('translate.Dealer') }}
+                                                    {{ __('User') }}
                                                 </th>
 
                                                 <th class="crancy-table__column-3 crancy-table__h3 sorting" >
