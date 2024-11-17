@@ -5,7 +5,7 @@
 
 @section('body-header')
     <h3 class="crancy-header__title m-0">{{ __('translate.Select Purpose') }}</h3>
-    <p class="crancy-header__text">{{ __('translate.Manage Car') }} >> {{ __('translate.Select Purpose') }}</p>
+    <p class="crancy-header__text">{{ __('Manege Property') }} >> {{ __('translate.Select Purpose') }}</p>
 @endsection
 
 @section('body-content')
@@ -22,8 +22,8 @@
                                 <!-- Single Integration -->
                                 <div class="crancy-single-integration mg-top-30">
                                     <div class="crancy-single-integration__content">
-                                        <p>{{ __('translate.Do you have a car rental business? Click the button below to add new rental car information and get a new rental.') }}</p>
-                                        <a href="{{ route('admin.car.create', ['purpose' => 'Rent']) }}" class="crancy-btn crancy-btn__regular crancy-btn__regular--connect">{{ __('translate.For Rent') }}</a>
+                                        <p>{{ __('translate.Do you have a rental? Click the button below to add new rental car information and get a new rental.') }}</p>
+                                        <a href="{{ route('admin.property.create', ['purpose' => 'Rent']) }}" class="crancy-btn crancy-btn__regular crancy-btn__regular--connect">{{ __('translate.For Rent') }}</a>
                                     </div>
                                 </div>
                                 <!-- End Single Integration -->
@@ -34,8 +34,8 @@
                                 <div class="crancy-single-integration mg-top-30">
 
                                     <div class="crancy-single-integration__content">
-                                        <p>{{ __('translate.Do you have a car sales business? Click the button below to add new sales car information and get a new client') }}</p>
-                                        <a href="{{ route('admin.car.create', ['purpose' => 'Sale']) }}" class="crancy-btn crancy-btn__regular">{{ __('translate.For Sale') }}</a>
+                                        <p>{{ __('translate.Do you have a property sale? Click the button below to add new sales car information and get a new client') }}</p>
+                                        <a href="{{ route('admin.property.create', ['purpose' => 'Sale']) }}" class="crancy-btn crancy-btn__regular">{{ __('translate.For Sale') }}</a>
                                     </div>
                                 </div>
                                 <!-- End Single Integration -->

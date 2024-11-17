@@ -27,20 +27,17 @@
                 <div class="collapse crancy__dropdown {{ Route::is('admin.brand*') || Route::is('admin.feature*') || Route::is('admin.car*') || Route::is('admin.select-car-purpose') || Route::is('admin.featured-car') || Route::is('admin.awaiting-car') || Route::is('admin.review-list') || Route::is('admin.review-detail') ? 'show' : '' }}" id="menu-item__car_list"  data-bs-parent="#CrancyMenu">
                     <ul class="menu-bar__one-dropdown">
 
+                        <li><a href="{{ route('admin.property.index') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('Property List') }}</span></span></a></li>
+
                         <li><a href="{{ route('admin.types.index') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('Proprty Type') }}</span></span></a></li>
 
+                        <li><a href="{{ route('admin.featured-car') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('Feature') }}</span></span></a></li>
 
                         <li><a href="{{ route('admin.feature.index') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('translate.Feature List') }}</span></span></a></li>
 
-                        <li><a href="{{ route('admin.car.index') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('translate.Car List') }}</span></span></a></li>
-
-                        <li><a href="{{ route('admin.awaiting-car') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('translate.Awaiting Car') }}</span></span></a></li>
-
-                        <li><a href="{{ route('admin.featured-car') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('translate.Featured Car') }}</span></span></a></li>
+                        <li><a href="{{ route('admin.awaiting-car') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('Awating') }}</span></span></a></li>
 
                         <li><a href="{{ route('admin.review-list') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('translate.Review List') }}</span></span></a></li>
-
-
 
                     </ul>
                 </div>

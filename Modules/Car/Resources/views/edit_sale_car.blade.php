@@ -1,11 +1,11 @@
 @extends('admin.master_layout')
 @section('title')
-    <title>{{ __('translate.Car for Sale') }}</title>
+    <title>{{ __('Property for sale') }}</title>
 @endsection
 
 @section('body-header')
-    <h3 class="crancy-header__title m-0">{{ __('translate.Car for Sale') }}</h3>
-    <p class="crancy-header__text">{{ __('translate.Manage Car') }} >> {{ __('translate.Car for Sale') }}</p>
+    <h3 class="crancy-header__title m-0">{{ __('Property for sale') }}</h3>
+    <p class="crancy-header__text">{{ __('Manage Property') }} >> {{ __('Property for sale') }}</p>
 @endsection
 
 @section('body-content')

@@ -1,11 +1,11 @@
 @extends('admin.master_layout')
 @section('title')
-    <title>{{ __('translate.Car for Rent') }}</title>
+    <title>{{ __('Property for rent') }}</title>
 @endsection
 
 @section('body-header')
-    <h3 class="crancy-header__title m-0">{{ __('translate.Car for Rent') }}</h3>
-    <p class="crancy-header__text">{{ __('translate.Manage Car') }} >> {{ __('translate.Car for Rent') }}</p>
+    <h3 class="crancy-header__title m-0">{{ __('Property for rent') }}</h3>
+    <p class="crancy-header__text">{{ __('Manage Property') }} >> {{ __('Property for rent') }}</p>
 @endsection
 
 @section('body-content')
@@ -34,7 +34,7 @@
                                     <div class="translation_box">
                                         <ul >
                                             @foreach ($language_list as $language)
-                                            <li><a href="{{ route('admin.car.edit', ['car' => $car->id, 'lang_code' => $language->lang_code] ) }}">
+                                            <li><a href="{{ route('admin.property.edit', ['property' => $car->id, 'lang_code' => $language->lang_code] ) }}">
                                                 @if (request()->get('lang_code') == $language->lang_code)
                                                     <i class="fas fa-eye"></i>
                                                 @else
@@ -68,7 +68,7 @@
 </section>
 <!-- End crancy Dashboard -->
 
-    <form action="{{ route('admin.car.update', $car->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.property.update', $car->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -115,7 +115,7 @@
 
                                             <div class="col-12">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Dealer') }} * </label>
+                                                    <label class="crancy__item-label">{{ __('User') }} * </label>
                                                     <select class="form-select crancy__item-input select2" name="agent_id">
                                                         <option value="">{{ __('translate.Select Dealer') }}</option>
                                                         @foreach ($dealers as $dealer)
@@ -146,7 +146,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Brand') }} * </label>
+                                                    <label class="crancy__item-label">{{ __('Property Type') }} * </label>
                                                     <select class="form-select crancy__item-input select2" name="brand_id">
                                                         <option value="">{{ __('translate.Select Brand') }}</option>
                                                         @foreach ($brands as $brand)
@@ -184,8 +184,7 @@
                                                 <div class="crancy__item-form--group mg-top-form-20">
                                                     <label class="crancy__item-label">{{ __('translate.Rent Period') }} * </label>
                                                     <select class="form-select crancy__item-input" name="rent_period">
-                                                        <option {{ 'Hourly' == $car->rent_period ? 'selected' : '' }} value="Hourly">{{ __('translate.Hourly') }}</option>
-                                                        <option {{ 'Daily' == $car->rent_period ? 'selected' : '' }} value="Daily">{{ __('translate.Daily') }}</option>
+                                                        
                                                         <option {{ 'Monthly' == $car->rent_period ? 'selected' : '' }} value="Monthly">{{ __('translate.Monthly') }}</option>
                                                         <option {{ 'Yearly' == $car->rent_period ? 'selected' : '' }} value="Yearly">{{ __('translate.Yearly') }}</option>
                                                     </select>
@@ -257,9 +256,9 @@
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Seller Type') }} * </label>
+                                                    <label class="crancy__item-label">{{ __('translate.Owner Type') }} * </label>
                                                     <select class="form-select crancy__item-input" name="seller_type">
-                                                        <option {{ 'Dealer' == $car->seller_type ? 'selected' : '' }}  value="Dealer">{{ __('translate.Dealer') }}</option>
+                                                        <option {{ 'Joint Owner' == $car->seller_type ? 'selected' : '' }}  value="Joint Owner">{{ __('translate.Joint Owner') }}</option>
                                                         <option {{ 'Personal' == $car->seller_type ? 'selected' : '' }} value="Personal">{{ __('translate.Indivisual') }}</option>
                                                     </select>
                                                 </div>
@@ -267,22 +266,41 @@
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Body Type') }} * </label>
-                                                    <input class="crancy__item-input" type="text" name="body_type" id="body_type" value="{{ html_decode($car->body_type) }}">
+                                                    <label class="crancy__item-label">{{ __('translate.Share') }} * </label>
+                                                    <select class="form-select"  name="body_type">
+                                                        <option {{ 'No' == $car->body_type ? 'selected' : '' }} value="No">{{ __('translate.No') }}</option>
+                                                        <option {{ 'Yes' == $car->body_type ? 'selected' : '' }} value="Yes">{{ __('translate.Yes') }}</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Engine Size') }} * </label>
-                                                    <input class="crancy__item-input" type="text" name="engine_size" id="engine_size" value="{{ html_decode($car->engine_size) }}">
+                                                    <label for="engine_size" class="form-label">{{ __('translate.Square Feet') }}
+                                                        <span>*</span> </label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="{{ __('translate.Square Feet') }}" name="engine_size" id="engine_size" value="{{ html_decode($car->engine_size) }}">
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Drive') }} * </label>
-                                                    <input class="crancy__item-input" type="text" name="drive" id="drive" value="{{ html_decode($car->drive) }}">
+                                                    <label for="drive" class="form-label">{{ __('translate.available from') }}
+                                                        <span>*</span> </label>
+                                                        <select name="drive" class="form-control" id="drive">
+                                                            <option {{ 'January' == $car->drive ? 'selected' : '' }} value="January">{{ __('translate.January') }}</option>
+                                                            <option {{ 'February' == $car->drive ? 'selected' : '' }} value="February">{{ __('translate.February') }}</option>
+                                                            <option {{ 'March' == $car->drive ? 'selected' : '' }} value="March">{{ __('translate.March') }}</option>
+                                                            <option {{ 'April' == $car->drive ? 'selected' : '' }} value="April">{{ __('translate.April') }}</option>
+                                                            <option {{ 'May' == $car->drive ? 'selected' : '' }} value="May">{{ __('translate.May') }}</option>
+                                                            <option {{ 'June' == $car->drive ? 'selected' : '' }} value="June">{{ __('translate.June') }}</option>
+                                                            <option {{ 'July' == $car->drive ? 'selected' : '' }} value="July">{{ __('translate.July') }}</option>
+                                                            <option {{ 'August' == $car->drive ? 'selected' : '' }} value="August">{{ __('translate.August') }}</option>
+                                                            <option {{ 'September' == $car->drive ? 'selected' : '' }} value="September">{{ __('translate.September') }}</option>
+                                                            <option {{ 'October' == $car->drive ? 'selected' : '' }} value="October">{{ __('translate.October') }}</option>
+                                                            <option {{ 'November' == $car->drive ? 'selected' : '' }} value="November">{{ __('translate.November') }}</option>
+                                                            <option {{ 'December' == $car->drive ? 'selected' : '' }} value="December">{{ __('translate.December') }}</option>
+                                                        </select>
                                                 </div>
                                             </div>
 
@@ -295,44 +313,85 @@
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Exterior Color') }} * </label>
-                                                    <input class="crancy__item-input" type="text" name="exterior_color" id="exterior_color" value="{{ html_decode($car->exterior_color) }}">
+                                                    <label for="exterior_color" class="form-label">{{ __('translate.Bedroom') }}
+                                                        <span>*</span> </label>
+                                                        <select class="form-control" name="exterior_color" id="exterior_color">
+                                                            @for ($i = 1; $i < 9; $i++)
+                                                            <option {{ $i == $car->exterior_color ? 'selected' : '' }} value={{ $i }}>{{ $i }}</option>
+                                                        @endfor
+                                                        </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Year') }} * </label>
-                                                    <input class="crancy__item-input" type="text" name="year" id="year" value="{{ html_decode($car->year) }}">
+                                                    <label for="year" class="form-label">{{ __('translate.Bathroom') }}
+                                                        <span>*</span> </label>
+                                                        <select class="form-control" name="year" id="year">
+                                                            @for ($i = 1; $i < 9; $i++)
+                                                                <option {{ $i == $car->year ? 'selected' : '' }} value={{ $i }}>{{ $i }}</option>
+                                                            @endfor
+                                                        </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Mileage') }} * </label>
-                                                    <input class="crancy__item-input" type="text" name="mileage" id="mileage" value="{{ html_decode($car->mileage) }}">
+                                                    <label for="mileage" class="form-label">{{ __('translate.Kitchen') }}
+                                                        <span>*</span> </label>
+                                                        <select class="form-control" name="mileage" id="mileage">
+                                                            @for ($i = 1; $i < 5; $i++)
+                                                                <option {{ $i == $car->mileage ? 'selected' : '' }} value={{ $i }}>{{ $i }}</option>
+                                                            @endfor
+                                                        </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Number of Owner') }} * </label>
-                                                    <input class="crancy__item-input" type="text" name="number_of_owner" id="number_of_owner" value="{{ html_decode($car->number_of_owner) }}">
+                                                    <label for="number_of_owner" class="form-label">{{ __('translate.Balcony') }}
+                                                        <span>*</span> </label>
+                                                        <select class="form-control" name="number_of_owner" id="number_of_owner">
+                                                            @for ($i = 1; $i < 5; $i++)
+                                                                <option {{ $i == $car->number_of_owner ? 'selected' : '' }} value={{ $i }}>{{ $i }}</option>
+                                                            @endfor
+                                                        </select>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Fuel Type') }} * </label>
-                                                    <input class="crancy__item-input" type="text" name="fuel_type" id="fuel_type" value="{{ html_decode($car->fuel_type) }}">
+                                                    <label for="fuel_type" class="form-label">{{ __('translate.Floor Number') }}
+                                                        <span>*</span> </label>
+                                                        <select class="form-control" name="fuel_type" id="fuel_type">
+                                                            @for ($i = 1; $i < 20; $i++)
+                                                                <option {{ $i == $car->fuel_type ? 'selected' : '' }} value={{ $i }}>{{ $i }}</option>
+                                                            @endfor
+                                                        </select>
                                                 </div>
                                             </div>
+                                            <div class="col-md-3">
+                                                <div class="crancy__item-form--group mg-top-form-20">
+                                                    <label for="condition" class="form-label">{{ __('translate.Property Condition') }}
+                                                        <span>*</span> </label>
+                                                        <select class="form-select"  name="condition">
+                                                            <option {{ 'Used' == $car->condition ? 'selected' : '' }} value="Used">{{ __('translate.Used') }}</option>
+                                                            <option {{ 'New' == $car->condition ? 'selected' : '' }} value="New">{{ __('translate.New') }}</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            
 
 
                                             <div class="col-md-3">
                                                 <div class="crancy__item-form--group mg-top-form-20">
-                                                    <label class="crancy__item-label">{{ __('translate.Transmission') }} * </label>
-                                                    <input class="crancy__item-input" type="text" name="transmission" id="transmission" value="{{ html_decode($car->transmission) }}">
+                                                    <label for="transmission" class="form-label">{{ __('translate.Gender') }}
+                                                        <span>*</span> </label>
+                                                        <select class="form-control" name="transmission" id="transmission">
+                                                            <option {{ 'Male' == $car->transmission ? 'selected' : '' }} value="Male">Male</option>
+                                                            <option {{ 'Female' == $car->transmission ? 'selected' : '' }} value="Female">Female</option>
+                                                            <option {{ 'Family' == $car->transmission ? 'selected' : '' }} value="Family">Family</option>
+                                                        </select>
                                                 </div>
                                             </div>
 

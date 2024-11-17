@@ -78,7 +78,7 @@
                                                     </td>
 
                                                     <td class="crancy-table__column-2 crancy-table__data-2">
-                                                        <h4 class="crancy-table__product-title"><a href="{{ route('admin.car.edit', ['car' => $review->car_id, 'lang_code' => admin_lang()]) }}">{{ $review?->car?->title }}</a></h4>
+                                                        <h4 class="crancy-table__product-title"><a href="{{ route('admin.property.edit', ['property' => $review->car_id, 'lang_code' => admin_lang()]) }}">{{ $review?->car?->title }}</a></h4>
                                                     </td>
 
                                                     <td class="crancy-table__column-2 crancy-table__data-2">

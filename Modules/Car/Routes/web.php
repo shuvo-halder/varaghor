@@ -8,10 +8,10 @@ Route::group(['middleware' => ['XSS','DEMO']], function () {
 
     Route::group(['as'=> 'admin.', 'prefix' => 'admin/listing', 'middleware' => ['auth:admin']],function (){
 
-        Route::resource('car', CarController::class);
+        Route::resource('property', CarController::class);
         Route::get('awaiting-property', [CarController::class, 'awaiting_car'])->name('awaiting-car');
-        Route::get('featured-car', [CarController::class, 'featured_car'])->name('featured-car');
-        Route::get('select-car-purpose', [CarController::class, 'select_car_purpose'])->name('select-car-purpose');
+        Route::get('featured-property', [CarController::class, 'featured_car'])->name('featured-car');
+        Route::get('select-property-purpose', [CarController::class, 'select_car_purpose'])->name('select-car-purpose');
         Route::get('car-gallery/{id}', [CarController::class, 'car_gallery'])->name('car-gallery');
         Route::post('upload-gallery/{id}', [CarController::class, 'upload_car_gallery'])->name('upload-gallery');
         Route::delete('delete-gallery/{id}', [CarController::class, 'delete_car_gallery'])->name('delete-gallery');

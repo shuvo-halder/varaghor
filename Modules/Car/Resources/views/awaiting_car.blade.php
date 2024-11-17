@@ -113,7 +113,7 @@
                                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
                                                                 <li>
-                                                                    <a href="{{ route('admin.car.edit', ['car' => $car->id, 'lang_code' => admin_lang()] ) }}" class=" dropdown-item"><i class="fas fa-edit"></i> {{ __('translate.Edit') }}</a>
+                                                                    <a href="{{ route('admin.property.edit', ['property' => $car->id, 'lang_code' => admin_lang()] ) }}" class=" dropdown-item"><i class="fas fa-edit"></i> {{ __('translate.Edit') }}</a>
 
                                                                 </li>
 

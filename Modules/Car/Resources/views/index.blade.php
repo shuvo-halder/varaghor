@@ -1,11 +1,11 @@
 @extends('admin.master_layout')
 @section('title')
-    <title>{{ __('translate.Car List') }}</title>
+    <title>{{ __('Property List') }}</title>
 @endsection
 
 @section('body-header')
-    <h3 class="crancy-header__title m-0">{{ __('translate.Car List') }}</h3>
-    <p class="crancy-header__text">{{ __('translate.Manage Car') }} >> {{ __('translate.Car List') }}</p>
+    <h3 class="crancy-header__title m-0">{{ __('Property List') }}</h3>
+    <p class="crancy-header__text">{{ __('Manage Property') }} >> {{ __('Property List') }}</p>
 @endsection
 
 @section('body-content')
@@ -22,7 +22,7 @@
                                 <div class="crancy-customer-filter">
                                     <div class="crancy-customer-filter__single crancy-customer-filter__single--csearch d-flex items-center justify-between create_new_btn_box">
                                         <div class="crancy-header__form crancy-header__form--customer create_new_btn_inline_box">
-                                            <h4 class="crancy-product-card__title">{{ __('translate.Car List') }}</h4>
+                                            <h4 class="crancy-product-card__title">{{ __('Property List') }}</h4>
 
                                             <a href="{{ route('admin.select-car-purpose') }}" class="crancy-btn "><span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -52,7 +52,7 @@
 
 
                                                 <th class="crancy-table__column-2 crancy-table__h2 sorting" >
-                                                    {{ __('translate.Brand') }}
+                                                    {{ __('Type') }}
                                                 </th>
 
 
@@ -63,7 +63,7 @@
 
 
                                                 <th class="crancy-table__column-2 crancy-table__h2 sorting">
-                                                    {{ __('translate.Dealer') }}
+                                                    {{ __('User') }}
                                                 </th>
 
 
@@ -117,7 +117,7 @@
                                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 
                                                                 <li>
-                                                                    <a href="{{ route('admin.car.edit', ['car' => $car->id, 'lang_code' => admin_lang()] ) }}" class=" dropdown-item"><i class="fas fa-edit"></i> {{ __('translate.Edit') }}</a>
+                                                                    <a href="{{ route('admin.property.edit', ['property' => $car->id, 'lang_code' => admin_lang()] ) }}" class=" dropdown-item"><i class="fas fa-edit"></i> {{ __('translate.Edit') }}</a>
 
                                                                 </li>
 
@@ -184,7 +184,7 @@
     <script>
         "use strict"
         function itemDeleteConfrimation(id){
-            $("#item_delect_confirmation").attr("action",'{{ url("admin/listing/car/") }}'+"/"+id)
+            $("#item_delect_confirmation").attr("action",'{{ url("admin/listing/property/") }}'+"/"+id)
         }
     </script>
 @endpush

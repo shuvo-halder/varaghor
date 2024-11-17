@@ -1,11 +1,11 @@
 @extends('admin.master_layout')
 @section('title')
-    <title>{{ __('translate.Car Gallery') }}</title>
+    <title>{{ __('Properties Gallery') }}</title>
 @endsection
 
 @section('body-header')
-    <h3 class="crancy-header__title m-0">{{ __('translate.Car Gallery') }}</h3>
-    <p class="crancy-header__text">{{ __('translate.Manage Car') }} >> {{ __('translate.Car Gallery') }}</p>
+    <h3 class="crancy-header__title m-0">{{ __('Properties Gallery') }}</h3>
+    <p class="crancy-header__text">{{ __('Manage Property') }} >> {{ __('Properties Gallery') }}</p>
 @endsection
 
 @section('body-content')
@@ -23,7 +23,7 @@
                                 <!-- Product Card -->
                                 <div class="crancy-product-card">
                                     <div class="create_new_btn_inline_box">
-                                        <h4 class="crancy-product-card__title">{{ __('translate.Car') }} : {{ html_decode($car->translate->title) }}</h4>
+                                        <h4 class="crancy-product-card__title">{{ __('Property') }} : {{ html_decode($car->translate->title) }}</h4>
                                     </div>
 
                                     <div class="row mg-top-30">

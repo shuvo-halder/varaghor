@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title')
-    <title>{{ html_decode($car->seo_title) }}</title>
+    <title>{{ html_decode($car->seo_title) }} || {{ __('VaraGhor') }}</title>
     <meta name="title" content="{{ html_decode($car->seo_title) }}">
     <meta name="description" content="{{ html_decode($car->seo_description) }}">
 @endsection
@@ -307,7 +307,7 @@
                                                             <path
                                                                 d="M17.9267 16.6022C17.9267 16.5979 17.9267 16.5936 17.9267 16.5892C17.9267 16.5546 17.9223 16.52 17.9223 16.481C17.8961 15.6241 17.8394 13.6202 15.9452 12.9797C15.9321 12.9754 15.9146 12.971 15.9015 12.9667C13.9331 12.469 12.2963 11.3437 12.2789 11.3307C12.0126 11.1446 11.646 11.2095 11.4583 11.4735C11.2706 11.7375 11.3361 12.1011 11.6024 12.2872C11.6766 12.3391 13.4137 13.538 15.5873 14.092C16.6042 14.4512 16.7177 15.5289 16.7483 16.5157C16.7483 16.5546 16.7483 16.5892 16.7526 16.6239C16.757 17.0134 16.7308 17.615 16.661 17.9612C15.9539 18.3594 13.1824 19.7357 8.96613 19.7357C4.76736 19.7357 1.97836 18.3551 1.26693 17.9569C1.19709 17.6107 1.16654 17.0091 1.17527 16.6195C1.17527 16.5849 1.17964 16.5503 1.17964 16.5113C1.21019 15.5246 1.32367 14.4469 2.34063 14.0877C4.51421 13.5337 6.25133 12.3305 6.32553 12.2829C6.59177 12.0968 6.65724 11.7332 6.46956 11.4692C6.28188 11.2052 5.91525 11.1403 5.64901 11.3264C5.63155 11.3394 4.00355 12.4647 2.02637 12.9624C2.00892 12.9667 1.99582 12.971 1.98273 12.9754C0.0884804 13.6202 0.0317404 15.6241 0.00555262 16.4767C0.00555262 16.5157 0.00555252 16.5503 0.0011879 16.5849C0.0011879 16.5892 0.0011879 16.5936 0.0011879 16.5979C-0.00317673 16.823 -0.00754126 17.9785 0.223784 18.5585C0.26743 18.671 0.345993 18.7662 0.450744 18.8312C0.581683 18.9177 3.71985 20.8999 8.97049 20.8999C14.2211 20.8999 17.3593 18.9134 17.4902 18.8312C17.5906 18.7662 17.6736 18.671 17.7172 18.5585C17.9354 17.9829 17.9311 16.8273 17.9267 16.6022Z" />
                                                         </svg>
-                                                        {{ __('translate.Seller Type') }}
+                                                        {{ __('Listing') }}
                                                     </span>
                                                     {{ html_decode($car->seller_type) }}
                                                 </li>
@@ -442,7 +442,7 @@
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingsix">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapsesix" aria-expanded="false" aria-controls="panelsStayOpen-collapsesix">
-                                        {{ __('translate.Car Reviews') }}
+                                        {{ __('Review') }}
                                     </button>
                                 </h2>
                                 <div id="panelsStayOpen-collapsesix" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingsix">
@@ -562,7 +562,7 @@
                         <div class="auto-sales-item-inner">
 
                         <div class="auto-sales-logo">
-                                <a href="{{ route('dealer', $dealer->username) }}"><img src="{{ getImageOrPlaceholder($dealer->image, '80x80') }}" alt="logo"></a>
+                                <a href="#"><img src="{{ getImageOrPlaceholder($dealer->image, '80x80') }}" alt="logo"></a>
                             </div>
 
                             <div class="auto-sales-text-item">
