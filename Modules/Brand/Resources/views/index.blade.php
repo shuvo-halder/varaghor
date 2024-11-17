@@ -1,11 +1,11 @@
 @extends('admin.master_layout')
 @section('title')
-    <title>{{ __('translate.Brand List') }}</title>
+    <title>{{ __('Property Type List || Vara Ghor') }}</title>
 @endsection
 
 @section('body-header')
-    <h3 class="crancy-header__title m-0">{{ __('translate.Brand List') }}</h3>
-    <p class="crancy-header__text">{{ __('translate.Manage Car') }} >> {{ __('translate.Brand List') }}</p>
+    <h3 class="crancy-header__title m-0">{{ __('Property Type List || Vara Ghor') }}</h3>
+    <p class="crancy-header__text">{{ __('Manage Property') }} >> {{ __('Property Type List') }}</p>
 @endsection
 
 @section('body-content')
@@ -22,9 +22,9 @@
                                 <div class="crancy-customer-filter">
                                     <div class="crancy-customer-filter__single crancy-customer-filter__single--csearch d-flex items-center justify-between create_new_btn_box">
                                         <div class="crancy-header__form crancy-header__form--customer create_new_btn_inline_box">
-                                            <h4 class="crancy-product-card__title">{{ __('translate.Brand List') }}</h4>
+                                            <h4 class="crancy-product-card__title">{{ __('Property Type list') }}</h4>
 
-                                            <a href="{{ route('admin.brand.create') }}" class="crancy-btn "><span>
+                                            <a href="{{ route('admin.types.create') }}" class="crancy-btn "><span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                                                     <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                                                     <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -51,7 +51,7 @@
                                                 </th>
 
                                                 <th class="crancy-table__column-2 crancy-table__h2 sorting">
-                                                    {{ __('translate.Total Car') }}
+                                                    {{ __('Total Property') }}
                                                 </th>
 
                                                 <th class="crancy-table__column-2 crancy-table__h2 sorting">
@@ -92,7 +92,7 @@
                                                     </td>
 
                                                     <td class="crancy-table__column-2 crancy-table__data-2">
-                                                        <a href="{{ route('admin.brand.edit', ['brand' => $brand->id, 'lang_code' => admin_lang()] ) }}" class="crancy-btn"><i class="fas fa-edit"></i> {{ __('translate.Edit') }}</a>
+                                                        <a href="{{ route('admin.types.edit', ['type' => $brand->id, 'lang_code' => admin_lang()] ) }}" class="crancy-btn"><i class="fas fa-edit"></i> {{ __('translate.Edit') }}</a>
 
                                                         <a onclick="itemDeleteConfrimation({{ $brand->id }})" href="javascript:;" data-bs-toggle="modal" data-bs-target="#exampleModal" class="crancy-btn delete_danger_btn"><i class="fas fa-trash"></i> {{ __('translate.Delete') }}</a>
                                                     </td>
@@ -146,7 +146,7 @@
     <script>
         "use strict"
         function itemDeleteConfrimation(id){
-            $("#item_delect_confirmation").attr("action",'{{ url("admin/listing/brand/") }}'+"/"+id)
+            $("#item_delect_confirmation").attr("action",'{{ url("admin/listing/types/") }}'+"/"+id)
         }
     </script>
 @endpush

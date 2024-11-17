@@ -22,12 +22,12 @@
                     </svg>
 
                 </span>
-                <span class="menu-bar__name">{{ __('translate.Manage Car') }}</span></span> <span class="crancy__toggle"></span></a></span>
+                <span class="menu-bar__name">{{ __('Manage Property') }}</span></span> <span class="crancy__toggle"></span></a></span>
                 <!-- Dropdown Menu -->
                 <div class="collapse crancy__dropdown {{ Route::is('admin.brand*') || Route::is('admin.feature*') || Route::is('admin.car*') || Route::is('admin.select-car-purpose') || Route::is('admin.featured-car') || Route::is('admin.awaiting-car') || Route::is('admin.review-list') || Route::is('admin.review-detail') ? 'show' : '' }}" id="menu-item__car_list"  data-bs-parent="#CrancyMenu">
                     <ul class="menu-bar__one-dropdown">
 
-                        <li><a href="{{ route('admin.brand.index') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('translate.Brand List') }}</span></span></a></li>
+                        <li><a href="{{ route('admin.types.index') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('Proprty Type') }}</span></span></a></li>
 
 
                         <li><a href="{{ route('admin.feature.index') }}"><span class="menu-bar__text"><span class="menu-bar__name">{{ __('translate.Feature List') }}</span></span></a></li>

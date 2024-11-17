@@ -1,11 +1,11 @@
 @extends('admin.master_layout')
 @section('title')
-    <title>{{ __('translate.Edit Brand') }}</title>
+    <title>{{ __('Edit Type || Varaghor') }}</title>
 @endsection
 
 @section('body-header')
     <h3 class="crancy-header__title m-0">{{ __('translate.Edit Brand') }}</h3>
-    <p class="crancy-header__text">{{ __('translate.Manage Car') }} >> {{ __('translate.Edit Brand') }}</p>
+    <p class="crancy-header__text">{{ __('Manage Property') }} >> {{ __('Edit Type') }}</p>
 @endsection
 
 @section('body-content')
@@ -34,7 +34,7 @@
                                         <div class="translation_box">
                                             <ul >
                                                 @foreach ($language_list as $language)
-                                                <li><a href="{{ route('admin.brand.edit', ['brand' => $brand->id, 'lang_code' => $language->lang_code] ) }}">
+                                                <li><a href="{{ route('admin.types.edit', ['type' => $brand->id, 'lang_code' => $language->lang_code] ) }}">
                                                     @if (request()->get('lang_code') == $language->lang_code)
                                                         <i class="fas fa-eye"></i>
                                                     @else
@@ -76,7 +76,7 @@
                     <div class="crancy-body">
                         <!-- Dashboard Inner -->
                         <div class="crancy-dsinner">
-                            <form action="{{ route('admin.brand.update', $brand->id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.types.update', $brand->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
 
@@ -88,9 +88,9 @@
                                         <!-- Product Card -->
                                         <div class="crancy-product-card">
                                             <div class="create_new_btn_inline_box">
-                                                <h4 class="crancy-product-card__title">{{ __('translate.Edit Brand') }}</h4>
+                                                <h4 class="crancy-product-card__title">{{ __('Edit Types') }}</h4>
 
-                                                <a href="{{ route('admin.brand.index') }}" class="crancy-btn "><i class="fa fa-list"></i> {{ __('translate.Brand List') }}</a>
+                                                <a href="{{ route('admin.types.index') }}" class="crancy-btn "><i class="fa fa-list"></i> {{ __('Types') }}</a>
                                             </div>
 
 

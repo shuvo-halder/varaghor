@@ -68,7 +68,7 @@ class BrandController extends Controller
 
         $notification= trans('translate.Created Successfully');
         $notification=array('messege'=>$notification,'alert-type'=>'success');
-        return redirect()->route('admin.brand.edit', ['brand' => $brand->id, 'lang_code' => admin_lang()])->with($notification);
+        return redirect()->route('admin.types.edit', ['type' => $brand->id, 'lang_code' => admin_lang()])->with($notification);
 
 
     }
@@ -160,7 +160,7 @@ class BrandController extends Controller
 
         $notification= trans('translate.Delete Successfully');
         $notification=array('messege'=>$notification,'alert-type'=>'success');
-        return redirect()->route('admin.brand.index')->with($notification);
+        return redirect()->route('admin.types.index')->with($notification);
     }
 
     public function assign_language($lang_code){

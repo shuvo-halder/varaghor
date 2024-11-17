@@ -1,11 +1,11 @@
 @extends('admin.master_layout')
 @section('title')
-    <title>{{ __('translate.Create Brand') }}</title>
+    <title>{{ __('Crate Types of property || Vara Ghor') }}</title>
 @endsection
 
 @section('body-header')
-    <h3 class="crancy-header__title m-0">{{ __('translate.Create Brand') }}</h3>
-    <p class="crancy-header__text">{{ __('translate.Manage Car') }} >> {{ __('translate.Create Brand') }}</p>
+    <h3 class="crancy-header__title m-0">{{ __('Crate Property Types') }}</h3>
+    <p class="crancy-header__text">{{ __('Manage Property') }} >> {{ __('Crate Property Types') }}</p>
 @endsection
 
 @section('body-content')
@@ -17,7 +17,7 @@
                     <div class="crancy-body">
                         <!-- Dashboard Inner -->
                         <div class="crancy-dsinner">
-                            <form action="{{ route('admin.brand.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.types.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="row">
@@ -25,9 +25,9 @@
                                         <!-- Product Card -->
                                         <div class="crancy-product-card">
                                             <div class="create_new_btn_inline_box">
-                                                <h4 class="crancy-product-card__title">{{ __('translate.Create Brand') }}</h4>
+                                                <h4 class="crancy-product-card__title">{{ __('Create Type') }}</h4>
 
-                                                <a href="{{ route('admin.brand.index') }}" class="crancy-btn "><i class="fa fa-list"></i> {{ __('translate.Brand List') }}</a>
+                                                <a href="{{ route('admin.types.index') }}" class="crancy-btn "><i class="fa fa-list"></i> {{ __('Types') }}</a>
                                             </div>
 
 
