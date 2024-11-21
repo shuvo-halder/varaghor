@@ -118,6 +118,16 @@ class HomeController extends Controller
 
         $selected_theme = Session::get('selected_theme');
 
+        $features = Feature::with('translate')->get();
+
+        $countries = Country::latest()->get();
+        $listing_ads = AdsBanner::where('position_key', 'listing_page_sidebar')->first();
+        $cars = Car::with('dealer', 'brand', 'front_translate')->where(function ($query) {
+            $query->where('expired_date', null)
+                ->orWhere('expired_date', '>=', date('Y-m-d'));
+        })->where(['status' => 'enable', 'approved_by_admin' => 'approved']);
+
+        $cars = $cars->paginate(12);
 
         if ($selected_theme == 'theme_one'){
             return view('index', [
@@ -155,6 +165,11 @@ class HomeController extends Controller
                 'home1_ads' => $home1_ads,
                 'home2_ads' => $home2_ads,
                 'home3_ads' => $home3_ads,
+                'features' => $features,
+                'listing_ads' => $listing_ads,
+                'cars' => $cars,
+
+                
             ]);
         }elseif($selected_theme == 'theme_three'){
             return view('index3', [
@@ -173,6 +188,7 @@ class HomeController extends Controller
                 'home1_ads' => $home1_ads,
                 'home2_ads' => $home2_ads,
                 'home3_ads' => $home3_ads,
+                
             ]);
         }else{
             return view('index', [
@@ -191,6 +207,9 @@ class HomeController extends Controller
                 'home1_ads' => $home1_ads,
                 'home2_ads' => $home2_ads,
                 'home3_ads' => $home3_ads,
+                'listing_ads' => $listing_ads,
+                'features' => $features,
+                'cars' => $cars
             ]);
         }
 
@@ -459,6 +478,7 @@ class HomeController extends Controller
         $features = Feature::with('translate')->get();
 
         $countries = Country::latest()->get();
+
 
         return view('listing', [
             'seo_setting' => $seo_setting,

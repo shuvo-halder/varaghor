@@ -70,6 +70,16 @@
         src="https://www.facebook.com/tr?id={{ $facebook_pixel->app_id }}&ev=PageView&noscript=1"
     /></noscript>
     @endif
+    @php
+        use Modules\Brand\Entities\Brand;
+        use Modules\City\Entities\City;
+        use Modules\Country\Entities\Country;
+        $brands = Brand::where('status', 'enable')->get();
+
+        $cities = City::with('translate')->get();
+
+        $countries = Country::latest()->get();
+    @endphp
 
 </head>
 
@@ -208,7 +218,7 @@
                                                 stroke-linejoin="round" />
                                         </svg>
                                     </span>
-                                    {{ __('translate.Dashboard') }}
+                                    
                                 </a>
                             @else
                             <a href="{{ route('login') }}" class="@if(Route::is('home')) {{ Session::get('selected_theme') == 'theme_three' ? 'thm-btn' : 'thm-btn-two' }} @else thm-btn-two  @endif">
@@ -257,52 +267,75 @@
                                 </div>
 
 
-                                <div class="menu">
-                                    <ul>
-                                        @if ($setting->selected_theme == 'all_theme')
-                                            <li><a href="{{ route('home') }}">{{ __('translate.Home') }} <i class="fa-solid fa-angle-down"></i> </a>
-
-                                                {{-- <ul class="sub-menu">
-                                                    <li><a href="{{ route('home', ['theme' => 'one']) }}">{{ __('translate.Home-01') }} </a> </li>
-                                                    <li><a href="{{ route('home', ['theme' => 'two']) }}">{{ __('translate.Home-02') }} </a> </li>
-                                                    <li><a href="{{ route('home', ['theme' => 'three']) }}">{{ __('translate.Home-03') }} </a> </li>
-                                                </ul> --}}
-                                            </li>
-                                        @else
-                                            <li><a href="{{ route('home') }}">{{ __('translate.Home') }}</a></li>
-                                        @endif
-
-                                        <li><a href="{{ route('about-us') }}">{{ __('translate.About Us') }}</a></li>
-
-                                        <li><a href="{{ route('listings') }}">{{ __('translate.Listings') }}</a></li>
-
-                                        {{-- <li><a href="{{ route('dealers') }}">{{ __('translate.Dealers') }}</a></li> --}}
-
-                                        <li><a href="{{ route('blogs') }}">{{ __('translate.Blogs') }}</a></li>
+                                
+                            </div>
 
 
-
-                                        <li><a href="javascript:;">{{ __('translate.Pages') }} <i class="fa-solid fa-angle-down"></i> </a>
-                                            <ul class="sub-menu">
-
-                                                <li><a href="{{ route('pricing-plan') }}">{{ __('translate.Pricing Plan') }}</a></li>
-
-                                                <li><a href="{{ route('terms-conditions') }}">{{ __('translate.Terms and Conditions') }}</a></li>
-
-                                                <li><a href="{{ route('privacy-policy') }}">{{ __('translate.Privacy Policy') }}</a></li>
-
-                                                @foreach ($custom_pages as $custom_page)
-                                                    <li><a href="{{ route('custom-page', $custom_page->slug) }}">{{ $custom_page->page_name }}</a></li>
+                            <div class="navSearch" style="display: flex; ">
+                                <div class="navSearchChild">
+                                    <form action="{{ route('listings') }}" class="d-flex">
+                                        @csrf
+                                        <div class="NavSearchBlockOne" style="display: flex;align-items:center; gap:1px;">
+                                            
+                                            <input type="text" class="form-control"
+                                                placeholder="{{ __('translate.Type here') }}" name="search">
+                                                
+                                        </div>
+                                        <div class="NavSearchBlockTwo" style="display: flex;align-items:center; gap:1px;">
+                                            
+        
+                                            <select class="form-select form-select-lg"
+                                                aria-label=".form-select-lg example" name="brands[]">
+                                                <option selected value="">
+                                                    {{ __('translate.Property') }}
+                                                </option>
+                                                @foreach ($brands as $brand)
+                                                <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                                 @endforeach
-                                            </ul>
-                                        </li>
+                                            </select>
+                                        </div>
+                                        <div class="navSearchBlockThree"style="display: flex;align-items:center; gap:1px;">
+                                            
+                                            <select class="form-select form-select-lg"
+                                                aria-label=".form-select-lg example" name="country">
+                                                <option value="">{{ __('translate.Country') }}</option>
+                                                @foreach ($countries as $country)
+                                                <option
+                                                    {{ request()->get('country') == $country->id ? 'selected' : '' }}
+                                                    value="{{ $country->id }}">{{ $country->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="navSearchBlockFour" style="display: flex;align-items:center; gap:1px;">
+                                            
+                                            <select class="form-select form-select-lg"
+                                                aria-label=".form-select-lg example" name="sort_by">
+                                                <option selected>{{ __('translate.Sort by') }}</option>
+                                                <option value="asc_to_dsc">{{ __('translate.ASC - DSC') }}</option>
+                                                <option value="dsc_to_asc">{{ __('translate.DSC - ASC') }}</option>
+                                                <option value="price_low_high">
+                                                    {{ Session::get('currency_icon') }}{{ __('translate.(Low-High)') }}
+                                                </option>
+                                                <option value="price_high_low">
+                                                    {{ Session::get('currency_icon') }}{{ __('translate.(High-Low)') }}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <input type="hidden" name="condition[]" value="New">
 
-                                        <li><a href="{{ route('faq') }}">{{ __('translate.FAQ') }}</a></li>
-                                        <li><a href="{{ route('contact-us') }}">{{ __('translate.Contact') }}</a></li>
+                                            <div class="navSearchBlockFive" style="display: flex;align-items:center; gap:1px;">
+                                                &nbsp;
+                                                <button type="submit" class="thm-btn-two btn-red">
+                                                    
+                                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                                </button>
 
-                                    </ul>
+                                            </div>
+                                        
+                                    </form>
                                 </div>
                             </div>
+
 
                             <div class="nav-btn">
 
@@ -484,55 +517,74 @@
 
 
 
+            <div class="navSearch" style="display: flex; ">
+                <div class="navSearchChild">
+                    <form action="{{ route('listings') }}" class="">
+                        @csrf
+                        <div class="NavSearchBlockOne" style="display: flex;align-items:center; gap:1px;">
+                            
+                            <input type="text" class="form-control"
+                                placeholder="{{ __('translate.Type here') }}" name="search">
+                                
+                        </div>
+                        <hr>
+                        <div class="NavSearchBlockTwo" style="display: flex;align-items:center; gap:1px;">
+                            
 
-            <ul class="nav-links">
-                <li class="dropdown">
-                <a href="javascript:;">{{ __('translate.Home') }}
-                     <span>
-                     {{-- <i class="fa-solid fa-angle-down"></i> --}}
-                    </span>
-                 </a>
-                    {{-- <ul class="d-menu">
-                        <li><a href="{{ route('home', ['theme' => 'one']) }}">{{ __('translate.Home-01') }} </a> </li>
-                        <li><a href="{{ route('home', ['theme' => 'two']) }}">{{ __('translate.Home-02') }} </a> </li>
-                        <li><a href="{{ route('home', ['theme' => 'three']) }}">{{ __('translate.Home-03') }} </a> </li>
-                    </ul> --}}
-                </li>
+                            <select class="form-select form-select-lg"
+                                aria-label=".form-select-lg example" name="brands[]">
+                                <option selected value="">
+                                    {{ __('translate.Property') }}
+                                </option>
+                                @foreach ($brands as $brand)
+                                <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="navSearchBlockThree"style="display: flex;align-items:center; gap:1px;">
+                            
+                            <select class="form-select form-select-lg"
+                                aria-label=".form-select-lg example" name="country">
+                                <option value="">{{ __('translate.Country') }}</option>
+                                @foreach ($countries as $country)
+                                <option
+                                    {{ request()->get('country') == $country->id ? 'selected' : '' }}
+                                    value="{{ $country->id }}">{{ $country->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="navSearchBlockFour" style="display: flex;align-items:center; gap:1px;">
+                            
+                            <select class="form-select form-select-lg"
+                                aria-label=".form-select-lg example" name="sort_by">
+                                <option selected>{{ __('translate.Sort by') }}</option>
+                                <option value="asc_to_dsc">{{ __('translate.ASC - DSC') }}</option>
+                                <option value="dsc_to_asc">{{ __('translate.DSC - ASC') }}</option>
+                                <option value="price_low_high">
+                                    {{ Session::get('currency_icon') }}{{ __('translate.(Low-High)') }}
+                                </option>
+                                <option value="price_high_low">
+                                    {{ Session::get('currency_icon') }}{{ __('translate.(High-Low)') }}
+                                </option>
+                            </select>
+                        </div>
+                        <input type="hidden" name="condition[]" value="New">
+                        <hr>
+                            <div class="d-grid gap-2" >
+                                
+                                <button type="submit" class="thm-btn-two btn btn-red btn-xl">
+                                    
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
 
-                <li><a href="{{ route('about-us') }}">{{ __('translate.About Us') }}</a></li>
-
-                <li><a href="{{ route('listings') }}">{{ __('translate.Listings') }}</a></li>
-
-                {{-- <li><a href="{{ route('dealers') }}">{{ __('translate.Dealers') }}</a></li> --}}
-
-                <li><a href="{{ route('blogs') }}">{{ __('translate.Blogs') }}</a></li>
-
-                <li class="dropdown">
-                    <a href="#">{{ __('translate.Pages') }}
-                        <span>
-                             <i class="fa-solid fa-angle-down"></i>
-                        </span>
-                     </a>
-
-                    <ul class="d-menu">
-
-                        <li><a href="{{ route('pricing-plan') }}">{{ __('translate.Pricing Plan') }}</a></li>
-
-                        <li><a href="{{ route('terms-conditions') }}">{{ __('translate.Terms and Conditions') }}</a></li>
-
-                        <li><a href="{{ route('privacy-policy') }}">{{ __('translate.Privacy Policy') }}</a></li>
-
-                        @foreach ($custom_pages as $custom_page)
-                            <li><a href="{{ route('custom-page', $custom_page->slug) }}">{{ $custom_page->page_name }}</a></li>
-                        @endforeach
-
-                    </ul>
-
-                </li>
-
-                <li><a href="{{ route('faq') }}">{{ __('translate.FAQ') }}</a></li>
-                <li><a href="{{ route('contact-us') }}">{{ __('translate.Contact') }}</a></li>
-            </ul>
+                            </div>
+                        
+                    </form>
+                </div>
+            </div>
+            
         </nav>
     </aside>
 
