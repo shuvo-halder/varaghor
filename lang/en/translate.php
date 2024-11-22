@@ -404,6 +404,7 @@
   'Name is required' => 'Name is required',
   'Designation is required' => 'Designation is required',
   'Email is required' => 'Email is required',
+  'Phone is required' => 'Phone is required',
   'Email already exist' => 'Email already exist',
   'Current password is required' => 'Current password is required',
   'Password is required' => 'Password is required',

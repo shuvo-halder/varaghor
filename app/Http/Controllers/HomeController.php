@@ -125,7 +125,7 @@ class HomeController extends Controller
         $cars = Car::with('dealer', 'brand', 'front_translate')->where(function ($query) {
             $query->where('expired_date', null)
                 ->orWhere('expired_date', '>=', date('Y-m-d'));
-        })->where(['status' => 'enable', 'approved_by_admin' => 'approved']);
+        })->where(['status' => 'enable', 'approved_by_admin' => 'approved'])->latest();
 
         $cars = $cars->paginate(12);
 

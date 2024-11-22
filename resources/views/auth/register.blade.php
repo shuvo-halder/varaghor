@@ -64,6 +64,15 @@
                             </div>
                         </div>
 
+                        <div class="login-form-item three">
+                            <div class="login-form-inner">
+                                <label for="exampleFormControlInput1" class="form-label">{{ __('Mobile') }}
+                                    <span>*</span> </label>
+                                <input type="number" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="{{ __('Mobile Number') }}" name="phone" value="{{ old('phone') }}">
+                            </div>
+                        </div>
+
 
                         <div class="login-form-item two">
                             <div class="login-form-inner">

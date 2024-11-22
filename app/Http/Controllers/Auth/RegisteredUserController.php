@@ -42,10 +42,15 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request): RedirectResponse
     {
+        
+        $request->validate([
+            'phone' => ['required','min:11','max:11']
+        ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phone' => $request->phone,
             'username' => Str::slug($request->name).'-'.date('Ymdhis'),
             'status' => 'enable',
             'is_banned' => 'no',
