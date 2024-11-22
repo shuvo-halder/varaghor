@@ -253,13 +253,7 @@
                                     <a href="{{ route('home') }}">
                                         @if (Route::is('home'))
                                             <img src="{{ getImageOrPlaceholder($setting->logo, '170x46') }}" alt="logo">
-                                            {{-- @if (Session::get('selected_theme') == 'theme_two')
-                                                <img src="{{ getImageOrPlaceholder($setting->logo, '170x46') }}" alt="logo">
-                                            @elseif (Session::get('selected_theme') == 'theme_three')
-                                            <img src="{{ getImageOrPlaceholder($setting->home3_logo2, '170x46') }}" alt="logo">
-                                            @else
-                                                <img src="{{ getImageOrPlaceholder($setting->logo, '170x46') }}" alt="logo">
-                                            @endif --}}
+                                            
                                         @else
                                             <img src="{{ getImageOrPlaceholder($setting->inner_logo, '170x46') }}" alt="logo">
                                         @endif
@@ -358,15 +352,15 @@
 
                                 @if (Route::is('home'))
                                     @if (Session::get('selected_theme') == 'theme_one')
-                                        <a href="{{ route('user.select-home-purpose') }}" class="thm-btn-two">{{ __('translate.Add Rent') }}</a>
+                                        <a href="{{ route('user.homes.create', ['purpose' => 'Rent']) }}" class="thm-btn-two">{{ __('translate.Add Rent') }}</a>
                                     @elseif (Session::get('selected_theme') == 'theme_two')
-                                        <a href="{{ route('user.select-home-purpose') }}" class="thm-btn-thr">{{ __('translate.Add Rent') }}</a>
+                                        <a href="{{ route('user.homes.create', ['purpose' => 'Rent']) }}" class="thm-btn-thr">{{ __('translate.Add Rent') }}</a>
                                     @elseif (Session::get('selected_theme') == 'theme_three')
-                                        <a href="{{ route('user.select-home-purpose') }}" class="thm-btn">{{ __('translate.Add Rent') }}</a>
+                                        <a href="{{ route('user.homes.create', ['purpose' => 'Rent']) }}" class="thm-btn">{{ __('translate.Add Rent') }}</a>
                                     @endif
 
                                 @else
-                                <a href="{{ route('user.select-home-purpose') }}" class="thm-btn-two">{{ __('translate.Add Rent') }}</a>
+                                <a href="{{ route('user.homes.create', ['purpose' => 'Rent']) }}" class="thm-btn-two">{{ __('translate.Add Rent') }}</a>
                                 @endif
 
 
@@ -441,41 +435,8 @@
                 <div class="header-right-item-btn-main">
                     <div class="header-right-item-btn">
                         <div class="dropdown two">
-                            <a class=" btn-secondary dropdown-toggle" href="#" role="button"
-                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-
-                                <span class="usd-icon">
-                                    <svg width="10" height="20" viewBox="0 0 10 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M9 6.5C9 4.567 7.32107 3 5.25 3C3.17893 3 1.5 4.567 1.5 6.5C1.5 8.433 3.17893 10 5.25 10"
-                                            stroke-width="1.5" stroke-linecap="round" />
-                                        <path
-                                            d="M1.5 13.5C1.5 15.433 3.17893 17 5.25 17C7.32107 17 9 15.433 9 13.5C9 11.567 7.32107 10 5.25 10"
-                                            stroke-width="1.5" stroke-linecap="round" />
-                                        <path d="M5.25 1V19" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-
-
-                                </span>
-
-                                {{ Session::get('currency_name') }}
-                                <span class="btn-arrow">
-                                    <svg width="12" height="6" viewBox="0 0 12 6" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M12.0002 0.633816C11.947 0.446997 11.8572 0.28353 11.6808 0.158011C11.3813 -0.0492418 10.9487 -0.0550799 10.6493 0.155092C10.5927 0.195958 10.5361 0.239744 10.4829 0.286449C9.02543 1.56499 7.56465 2.84645 6.10719 4.125C6.07391 4.15419 6.04729 4.18922 5.96743 4.24176C5.94414 4.20673 5.93083 4.16294 5.89755 4.13375C4.42679 2.84062 2.95269 1.5504 1.48192 0.257257C1.22237 0.0295716 0.922896 -0.0579998 0.563523 0.0412478C0.0411014 0.1872 -0.17186 0.776848 0.157565 1.16216C0.194168 1.20595 0.237426 1.24681 0.280683 1.28768C1.97772 2.7764 3.67144 4.26511 5.36848 5.75091C5.67794 6.02238 6.07059 6.07492 6.42663 5.89394C6.51315 5.85015 6.58968 5.78594 6.65956 5.72464C8.30669 4.27971 9.95049 2.83478 11.6009 1.39277C11.784 1.23222 11.947 1.06875 12.0002 0.838149C12.0002 0.771011 12.0002 0.703873 12.0002 0.633816Z" />
-                                    </svg>
-                                </span>
-                            </a>
-
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                @foreach ($currency_list as $currency_dropdown_item)
-                                    <li><a class="dropdown-item" href="{{ route('currency-switcher', ['currency_code' => $currency_dropdown_item->currency_code]) }}">{{ $currency_dropdown_item->currency_name }}</a></li>
-                                @endforeach
-                            </ul>
-
+                            <a class="btn btn-secondary text-center" href="{{ route('user.homes.create', ['purpose' => 'Rent']) }}">Rent</a>
+                            
                         </div>
                     </div>
                     <div class="header-right-item-btn">
@@ -555,7 +516,7 @@
                             </select>
                         </div>
                         <hr>
-                        <div class="navSearchBlockFour" style="display: flex;align-items:center; gap:1px;">
+                        {{-- <div class="navSearchBlockFour" style="display: flex;align-items:center; gap:1px;">
                             
                             <select class="form-select form-select-lg"
                                 aria-label=".form-select-lg example" name="sort_by">
@@ -569,7 +530,7 @@
                                     {{ Session::get('currency_icon') }}{{ __('translate.(High-Low)') }}
                                 </option>
                             </select>
-                        </div>
+                        </div> --}}
                         <input type="hidden" name="condition[]" value="New">
                         <hr>
                             <div class="d-grid gap-2" >

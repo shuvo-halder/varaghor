@@ -52,7 +52,6 @@
                                 </div>
                             </div>
 
-
                         </div>
 
                         <div class="row g-3 mt-50px">
@@ -489,9 +488,9 @@
                                                         <span>{{ $car?->brand?->name }}</span>
                                                         <p>
                                                             @if ($car->offer_price)
-                                                                {{ currency($car->offer_price) }}
+                                                                &#2547;{{ $car->offer_price }}
                                                             @else
-                                                                {{ currency($car->regular_price) }}
+                                                                &#2547;{{ $car->regular_price }}
                                                             @endif
                                                         </p>
                                                     </div>

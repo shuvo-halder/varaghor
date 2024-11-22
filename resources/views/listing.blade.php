@@ -357,8 +357,8 @@
                             aria-labelledby="pills-home-tab">
                             <div class="row g-5">
                                 @forelse ($cars as $index => $car)
-                                    <div class="col-lg-4  col-sm-6 col-md-6">
-                                        <div class="brand-car-item">
+                                    <div class="col-lg-3 col-sm-4 col-md-4">
+                                        <div class="brand-car-item card" style="height: 300px;" >
                                             <div class="brand-car-item-img">
                                                 <img src="{{ getImageOrPlaceholder($car->thumb_image, '330x215') }}" width="330px" height="215px" alt="thumb">
 
@@ -430,9 +430,9 @@
                                                     <span>{{ $car?->brand?->name }}</span>
                                                     <p>
                                                         @if ($car->offer_price)
-                                                            {{ currency($car->offer_price) }}
+                                                            &#2547;{{ $car->offer_price }}
                                                         @else
-                                                            {{ currency($car->regular_price) }}
+                                                            &#2547;{{ $car->regular_price }}
                                                         @endif
                                                     </p>
                                                 </div>
@@ -499,10 +499,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="brand-car-btm-txt-btm">
-                                                    <h6 class="brand-car-btm-txt"><span>{{ __('translate.Listed by') }} :</span>{{ html_decode($car?->dealer?->name) }}
-                                                    </h6>
-                                                </div>
+                                                
                                             </div>
 
                                         </div>
