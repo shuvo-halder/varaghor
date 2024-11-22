@@ -414,8 +414,10 @@
                                 aria-labelledby="pills-home-tab">
                                 <div class="row g-5">
                                     @forelse ($cars as $index => $car)
-                                        <div class="col-lg-3  col-sm-4 col-md-4">
-                                            <div class="brand-car-item">
+                                    
+
+                                        <div class="col-lg-3 col-sm-4 col-md-4">
+                                            <div class="brand-car-item card" style="height: 300px;">
                                                 <div class="brand-car-item-img">
                                                     <img style="" src="{{ getImageOrPlaceholder($car->thumb_image, '330x215') }}" width="330px" height="215px" alt="thumb">
     
@@ -556,10 +558,7 @@
                                                         </div>
                                                     </div>
     
-                                                    <div class="brand-car-btm-txt-btm">
-                                                        <h6 class="brand-car-btm-txt"><span>{{ __('translate.Listed by') }} :</span>{{ html_decode($car?->dealer?->name) }}
-                                                        </h6>
-                                                    </div>
+                                                    
                                                 </div>
     
                                             </div>
@@ -979,7 +978,7 @@
 
                     <div class="row g-5 mt-32px ">
                         @foreach ($blogs as $blog)
-                            <div class="col-lg-2 col-sm-6 col-md-6">
+                            <div class="col-lg-3 col-sm-6 col-md-6">
                                 <div class="blog-item">
                                     <div class="blog-item-img">
                                         <img src="{{ asset($blog->image) }}" alt="thumb">
