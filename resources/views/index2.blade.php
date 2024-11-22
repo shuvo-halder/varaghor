@@ -19,13 +19,9 @@
 @endpush
 
 @section('body-content')
+<br><br><br>
     <main>
 
-
-
-
-        <br><br><br>
-        <!-- Categories-part-start -->
         <section class="categories categories-two  py-120px">
             <div class="container">
                 <div class="row ">
@@ -81,27 +77,16 @@
 
                     </div>
 
-                    {{-- <div class="col-lg-4">
-                    <div class="categories-close-img-main">
-                        @if ($home2_ads->status == 'enable')
-                        <div class="categories-close-img">
-                            <a href="{{ $home2_ads->link }}" target="_blank"> <img src="{{ asset($home2_ads->image) }}"
-                                    alt="img"></a>
-                        </div>
-                        @endif
-                    </div>
-                </div> --}}
-
+                    
                 </div>
 
             </div>
         </section>
-        <!-- Categories-part-end -->
+       
 
 
 
-
-        <section class="inventory feature-two">
+        <section class="inventory pt-5 feature-two">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
@@ -429,10 +414,10 @@
                                 aria-labelledby="pills-home-tab">
                                 <div class="row g-5">
                                     @forelse ($cars as $index => $car)
-                                        <div class="col-lg-4  col-sm-6 col-md-6">
+                                        <div class="col-lg-3  col-sm-4 col-md-4">
                                             <div class="brand-car-item">
                                                 <div class="brand-car-item-img">
-                                                    <img src="{{ getImageOrPlaceholder($car->thumb_image, '330x215') }}" width="330px" height="215px" alt="thumb">
+                                                    <img style="" src="{{ getImageOrPlaceholder($car->thumb_image, '330x215') }}" width="330px" height="215px" alt="thumb">
     
                                                     <div class="brand-car-item-img-text">
     
