@@ -127,7 +127,7 @@ class HomeController extends Controller
                 ->orWhere('expired_date', '>=', date('Y-m-d'));
         })->where(['status' => 'enable', 'approved_by_admin' => 'approved'])->latest();
 
-        $cars = $cars->paginate(12);
+        $cars = $cars->paginate(16);
 
         if ($selected_theme == 'theme_one'){
             return view('index', [
@@ -465,7 +465,7 @@ class HomeController extends Controller
 
         }
 
-        $cars = $cars->paginate(12);
+        $cars = $cars->paginate(16);
 
         $listing_ads = AdsBanner::where('position_key', 'listing_page_sidebar')->first();
 
