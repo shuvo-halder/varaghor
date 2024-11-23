@@ -26,6 +26,7 @@ class RegisterRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'phone' => ['required','numeric','min:11','max:11', 'unique:'.User::class],
             'password' => ['required', 'confirmed', 'min:4', 'max:100'],
             'g-recaptcha-response'=>new Captcha()
         ];
@@ -37,6 +38,8 @@ class RegisterRequest extends FormRequest
             'name.required' => trans('translate.Name is required'),
             'email.required' => trans('translate.Email is required'),
             'email.unique' => trans('translate.Email already exist'),
+            'phone.required' => 'Phone number is required',
+            'phone.unique' => 'Phone number is already exist',
             'password.required' => trans('translate.Password is required'),
             'password.confirmed' => trans('translate.Confirm password does not match'),
             'password.min' => trans('translate.You have to provide minimum 4 character password'),
