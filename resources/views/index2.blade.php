@@ -91,40 +91,6 @@
                     <div class="col-lg-3">
                         <form action="" id="search_form">
                             <div class="inventory-main-box">
-                                <div class="inventory-taitel">
-                                    <h5>{{ __('translate.Location') }}</h5>
-                                </div>
-    
-                                <div class="location-box">
-    
-                                    <select class="form-control select2" name="country" id="country_id">
-                                        <option value="">{{ __('translate.Select Country') }}</option>
-                                        @foreach ($countries as $country)
-                                            <option {{ request()->get('country') == $country->id ? 'selected' : '' }} value="{{ $country->id }}">{{ $country->name }}</option>
-                                        @endforeach
-                                    </select>
-    
-                                    <button type="button" class="icon">
-                                        <span>
-                                        <i class="fa-solid fa-location-dot"></i>
-                                        </span>
-                                    </button>
-                                </div>
-    
-    
-                                <div class="location-box">
-    
-                                    <select class="form-control select2" name="location" id="city_id">
-                                        <option value="">{{ __('translate.Select City') }}</option>
-                                        @foreach ($cities as $city)
-                                            <option {{ request()->get('location') == $city->id ? 'selected' : '' }} value="{{ $city->id }}">{{ $city->name }}</option>
-                                        @endforeach
-                                    </select>
-    
-    
-                                </div>
-    
-    
     
                                 <!-- Select Your Brand  -->
                                 <div class="accordion" id="accordionPanelsStayOpenExample">
